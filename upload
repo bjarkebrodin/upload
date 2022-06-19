@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+# assume zsh
+# assume scp installed
+
+. ~/.uploadrc
+
+# assume path is relative
+# assume remote host is valid and correct
+# assume remote host port is valid and correct
+# assume remote root is valid and exists
+
+echo "scp -P $UPLOAD_REMOTE_HOST_PORT $1 $UPLOAD_REMOTE_HOST:$UPLOAD_REMOTE_ROOT"
+scp -P "$UPLOAD_REMOTE_HOST_PORT" "$1" "$UPLOAD_REMOTE_HOST":"$UPLOAD_REMOTE_ROOT"
+
