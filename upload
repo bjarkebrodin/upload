@@ -9,6 +9,8 @@
 # assume remote host port is valid and correct
 # assume remote root is valid and exists
 
+if [[ $1 -eq 'test' ]]; then echo 'test'; exit 0; fi
+
 echo "scp -P $UPLOAD_REMOTE_HOST_PORT $1 $UPLOAD_REMOTE_HOST:$UPLOAD_REMOTE_ROOT"
 scp -P "$UPLOAD_REMOTE_HOST_PORT" "$1" "$UPLOAD_REMOTE_HOST":"$UPLOAD_REMOTE_ROOT"
 
